@@ -1,8 +1,8 @@
 {
-  "name": "imitate-beautiful-thing",
+  "name": "zstu-life",
   "version": "1.0.0",
-  "description": "a learning demo demo",
-  "author": "爱莉缇 <ai_li_ti@sina.com>",
+  "description": "zstu-life",
+  "author": "qin",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
