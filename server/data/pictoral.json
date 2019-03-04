@@ -1,4 +1,19 @@
 {
+	"新媒体":{
+		"title": "浅谈新媒体的未来",
+		"icon":"./static/images/logo.jpg",
+		"portrait":"./static/images/xinmeiti.jpg",
+		"desc":"新媒体在未来居然是这样的！ 新媒体的火热由来已久，从今日头条的出现，到一家家的新媒体公司成立，甚至bat也在积极布局新媒体领域。一点资讯，百度百家，大鱼号的出现以及传媒媒体搜狐，网易的转型，为已经火热的现场添了把柴。",
+		"abstract":"新媒体在未来居然是这样的！ 新媒体的火热由来已久，从今日头条的出现，到一家家的新媒体公司成立，甚至bat也在积极布局新媒体领域。一点资讯，百度百家，大鱼号的出现以及传媒媒体搜狐，网易的转型，为已经火热的现场添了把柴。",
+		"magnumOpus":"gfdhdf",
+		"genre":"",
+		"arts":[
+			{"img":"./static/images/xinmeiti.jpg","originate":"文/简书"},
+			{"img":"./static/images/lfe02.jpg","originate":"《圣母的婚礼》"},
+			{"img":"./static/images/lfe03.jpg","originate":"《圣乔治与龙》"},
+			{"img":"./static/images/lfe04.jpg","originate":"《西斯廷圣母》"}
+		]
+	},
 	"拉斐尔":{
 		"title": "拉斐尔/ 意大利",
 		"icon":"./static/images/logo.jpg",

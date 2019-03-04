@@ -9,11 +9,17 @@
 				<div v-for="(data, index) in dataList" class="pictoral-item"  
 					:key="indexList[index]"  
 					:data-index="index" >
-					<span class="pictoral-item_logo"><img :src="data.icon" alt=""></span>
+					<!--每篇文章上的小图标-->
+					<!--<span class="pictoral-item_logo"><img :src="data.icon" alt=""></span>-->
+					<!--首页推荐文章正标题-->
 					<h6>{{data.title}}</h6>
-					<p>——{{data.originate}}</p>
+					<!--小标题-->
+					<p>——{{data.originate}}</p>  
+					<!--正文图片-->
 					<img :src="data.img" alt="">
-					<p>{{data.desc}}</p>
+					<!--<img :src="data.portrait" alt="">-->
+					<!--摘要-->
+					<p>{{data.abstract}}</p>
 				</div>
 			</transition-group>
 			<div class="no-more-data"  v-show="noData"><i class="fa fa-hand-o-up"></i><p>没有更多了，试试向上滑动吧！</p></div>
@@ -39,7 +45,7 @@
 				activeIndex:0,
 				stop:false,
 				noData:false,
-				indexList:[1,2,3,4,5,6,7,8,9,10]
+				indexList:[1,2,3,4,5,6,7,8,9,10,11,12]
 			}
 		},
 		created: function(){
@@ -97,7 +103,7 @@
 		      if(el.dataset.index >= (this.first + 4)){
 		      	top = 15 + "%";
 		      }else{
-		      	top = (4 - (el.dataset.index - this.first))*8 + "%";
+		      	top = (4 - (el.dataset.index - this.first))*10 + "%";
 		      }
 		      setTimeout(function () {
 		        Velocity(
