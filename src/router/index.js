@@ -10,6 +10,9 @@ import Pictoral from '@/pages/pictoral'
 import Details from '@/pages/details'
 import Comment from '@/pages/comment'
 import About from '@/pages/about'
+import login from '@/components/login/login'
+
+import Prearticle from '@/pages/prearticle'
 
 Router.prototype.goBack = function(){
 	this.isBack = true;
@@ -20,6 +23,11 @@ Vue.use(Router);
 
 const routers = new Router({
   routes: [
+    {
+      path:'/login',
+      name:'login',
+      component:login
+    },
     {
       path:'',
       name:'',
@@ -53,6 +61,12 @@ const routers = new Router({
                 name:'personal',
                 meta:{index:1},
                 component:Personal
+              },
+              {
+                path:'/prearticle',
+                name:'prearticle',
+                meta:{index:1},
+                component:Prearticle
               },
           ]
         },
