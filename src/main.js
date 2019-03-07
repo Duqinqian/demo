@@ -10,6 +10,8 @@ import './assets/style/style.scss'
 import tabbar from './components/tabBar'
 import swiper from './components/swiper'
 import toast from './components/toast'
+import mynav from './components/swiper'
+import tabnav from './components/tabBar'
 
 Vue.config.productionTip = false
 Vue.config.devtools = true
@@ -20,6 +22,8 @@ Vue.use(scroller)
 Vue.use(tabbar)
 Vue.use(swiper)
 Vue.use(toast)
+Vue.use(mynav)
+Vue.use(tabnav)
 
 new Vue({
   router,

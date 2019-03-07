@@ -12,6 +12,11 @@ import Comment from '@/pages/comment'
 import About from '@/pages/about'
 import login from '@/components/login/login'
 
+import publish from '@/pages/publish'
+import notes from '@/pages/notes'
+import question from '@/pages/question'
+import fun from '@/pages/fun'
+
 import Prearticle from '@/pages/prearticle'
 
 Router.prototype.goBack = function(){
@@ -49,6 +54,30 @@ const routers = new Router({
                 name:'things',
                 meta:{index:1},
                 component:Things
+              },
+              {
+                path:'/publish',
+                name:'publish',
+                meta:{index:1},
+                component:publish
+              },
+              {
+                path:'/notes',
+                name:'notes',
+                meta:{index:1},
+                component:notes
+              },
+               {
+                path:'/question',
+                name:'question',
+                meta:{index:1},
+                component:question
+              },
+              {
+                path:'/fun',
+                name:'fun',
+                meta:{index:1},
+                component:fun
               },
               {
                 path:'/designer',

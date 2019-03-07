@@ -22,7 +22,8 @@
 					{text:"推荐",icon:"fa fa-clipboard",link:'/'},
 					{text:"发现",icon:"fa fa-smile-o",link:'/things'},
 					// {text:"发现",icon:"fa fa-smile-o",link:'/prearticle'},
-					{text:"发布",icon:"fa fa-pencil",link:'/designer'},
+					// {text:"发布",icon:"fa fa-pencil",link:'/designer'},
+					{text:"发布",icon:"fa fa-pencil",link:'/publish'},
 					{text:"我的",icon:"fa fa-user-o",link:'/personal'}
 				]
 			}

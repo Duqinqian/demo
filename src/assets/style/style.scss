@@ -31,7 +31,7 @@ body { position: fixed }
 /* home */
 .home { 
     // height: 100%; width: 100%; transform: scale3d(1, 1, 1); background: #3c3c3c;
-    height: 100%; width: 100%;  background: #3c3c3c;
+    height: 100%; width: 100%;  background: #ffe7ba;
     // .home-content { width: 100%; position: absolute; top: 0; left: 0; right: 0; bottom: 120px; z-index: 1; }
     .home-content { width: 100%;  z-index: 1; }
 }
@@ -66,7 +66,7 @@ body { position: fixed }
         i { font-size: 50px; margin-bottom: 20px; }
     }
 }
-.page-title { position:fixed;padding: 20px 30px; background: #111; height: 100px; z-index: 999; width: 100%; text-align: center; line-height: 60px;
+.page-title { position:fixed;padding: 20px 30px; background: #cdba96; height: 100px; z-index: 999; width: 100%; text-align: center; line-height: 60px;
     .goBack { display: inline-block; float: left; margin-top: -10px; }
 }
 
