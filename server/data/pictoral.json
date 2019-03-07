@@ -83,5 +83,29 @@
 			{"img":"./static/images/fg03.jpg","originate":"《粉红色的桃花树》"},
 			{"img":"./static/images/fg04.jpg","originate":"《在奥维尔的房子》"}
 		]
+	},
+	"小记1":{
+		"title":"111",
+		"content":"111111111111"
+	},
+	"小记2":{
+		"title":"222",
+		"content":"222222"
+	},
+	"轶事1":{
+		"title":"aaa",
+		"content":"aaaaaaaaaaaaa"
+	},
+	"轶事2":{
+		"title":"bbb",
+		"content":"bbbbbbbbbbbbb"
+	},
+	"问题1":{
+		"title":"1a1a",
+		"content":"1a1a1aa1a11aa1a1"
+	},
+	"问题2":{
+		"title":"b2b22b",
+		"content":"b2b2b2bb2b2b2b2"
 	}
 }
