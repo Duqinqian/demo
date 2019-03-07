@@ -58,7 +58,13 @@
 				this.$axios.post("/things",{}).then(function(response){
 					var result = response.data;
 					if(result.code == 200){
-						self.navList  = result.list;
+						const titles = ['历史文章', '轶事', '大家说', 'fdf']
+						result.list.forEach((value, index) => {
+							value.text = titles[index]
+							value.dataList.forEach(value => value.id = titles[index])
+						})
+						self.navList = result.list.slice(0, 4)
+						console.log(self.navList);
 					}
 					
 				}).catch(function(error){
