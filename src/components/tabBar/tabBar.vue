@@ -19,18 +19,20 @@
 			return {
 				isActive:this.$store.state.tabIndex,
 				itemList:[
-					{text:"推荐",icon:"fa fa-clipboard",link:'/'},
-					{text:"发现",icon:"fa fa-smile-o",link:'/things'},
+					// {text:"推荐",icon:"fa fa-clipboard",link:'/'},
+					{icon:"fa fa-2x fa-home",link:'/things'},
+					{icon:"fa fa-2x fa-bookmark-o ",link:'/all'},
 					// {text:"发现",icon:"fa fa-smile-o",link:'/prearticle'},
 					// {text:"发布",icon:"fa fa-pencil",link:'/designer'},
-					{text:"发布",icon:"fa fa-pencil",link:'/publish'},
-					{text:"我的",icon:"fa fa-user-o",link:'/personal'}
+					{icon:"fa fa-2x fa-pencil",link:'/publish_all'},
+					{icon:"fa fa-2x fa-user-o",link:'/personal'}
 				]
 			}
 		},
 		mounted(){
 			if(this.isActive != 0){
 				this.$router.push(this.itemList[this.isActive].link);
+				// console.log(this.username)
 			}
 		},
 		methods:{

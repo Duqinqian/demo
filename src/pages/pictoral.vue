@@ -1,5 +1,6 @@
 <template>
 	<div class="pictoral">
+		<span @click="goBack" class="goBack_pictoral"><i class="fa fa-2x fa-angle-left"></i></span>
 		<div class="pictoral-main">
 			 <transition-group name="cell" tag="div" class="container"
 					v-bind:css="false"
@@ -8,18 +9,31 @@
    					v-on:leave="leave">
 				<div v-for="(data, index) in dataList" class="pictoral-item"  
 					:key="indexList[index]"  
-					:data-index="index" >
+					:data-index="index" 
+					@click="showArticles(data)">
 					<!--每篇文章上的小图标-->
-					<!--<span class="pictoral-item_logo"><img :src="data.icon" alt=""></span>-->
+					<span class="pictoral-item_logo"><img src="../../static/images/logo1.jpg"></span>
 					<!--首页推荐文章正标题-->
 					<h6>{{data.title}}</h6>
+					<!--<div class="biaoti">{{data.title}}</div>-->
 					<!--小标题-->
-					<p>——{{data.originate}}</p>  
+					<!--<p>——{{author}}</p>  -->
 					<!--正文图片-->
-					<img :src="data.img" alt="">
+					<div class="photo">
+						<!--<img :src="'http://192.168.43.247/public/images/' + data.cover_img" alt="" >-->
+						<img :src="'http://192.168.43.247/public/ariticle/' + data.id +'/' + '/cover_img.jpg' " alt="" >
+						 <!--<img :src="'http://192.168.43.247/public/ariticle/' + data.id +'/' + '/cover_img0.jpg' " alt="" >-->
+					</div>
+					<!--<img src="../api/images/1.jpg" alt="">-->
 					<!--<img :src="data.portrait" alt="">-->
 					<!--摘要-->
-					<p>{{data.abstract}}</p>
+					<div class="words">
+					<p v-html="data.cover_desc">{{data.cover_desc}}</p>
+						<!--<div class="icon" @click="icon">-->
+						<!--<i class="fa fa-heart-o"></i>&nbsp;&nbsp;-->
+						<!--<i class="fa fa-smile-o">13</i>-->
+						<!--</div>-->
+					</div>
 				</div>
 			</transition-group>
 			<div class="no-more-data"  v-show="noData"><i class="fa fa-hand-o-up"></i><p>没有更多了，试试向上滑动吧！</p></div>
@@ -31,10 +45,13 @@
 	import Velocity from 'velocity-animate/velocity.js'
 	import 'velocity-animate/velocity.ui.js'
 	import {prevent} from '../utils'
+	import {getAriticle, getAuthor} from '../api/index'
+	
 	export default{
 		name: 'pictoral',
 		data (){
 			return{
+				author:'',
 				dataList:[],
 				first:0,
 				second:1,
@@ -45,7 +62,7 @@
 				activeIndex:0,
 				stop:false,
 				noData:false,
-				indexList:[1,2,3,4,5,6,7,8,9,10,11,12]
+				indexList:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
 			}
 		},
 		created: function(){
@@ -91,6 +108,13 @@
 			}
 		},
 		methods:{
+			goBack: function(){	
+				this.$router.goBack();	
+			},
+			showArticles: function(data){
+				console.log(data)
+				this.$router.push('/comment/'+data.id);
+			},
 			beforeEnter: function (el) {
 		      el.style.opacity = 0;
 		      el.style.height = 0;
@@ -171,16 +195,67 @@
 			}, 
 			getData: function(){
 				var self = this;
-				this.$axios.post("/pictoral",{}).then(function(response){
-					var result = response.data;
-					if(result.code == 200){
-						self.dataList =self.dataList = result.list;
+				// this.$axios.post("/article",{}).then(function(response){
+				// 	var result = response.data;
+				// 	console.log(result.list)
+				// 	if(result.code == 200){
+				// 		self.dataList =self.dataList = result.list;
+				// 	}
+				// }).catch(function(error){
+				// 	console.log(error);
+				// });
+				getAriticle(0, 'Ariticle').then(res=> {
+					let result = res.data;
+					if( result.code == 200){
+						self.dataList  = res.data.extra;
+						let username = localStorage.getItem('username');
+						// console.log(this.user_id)
 					}
 				}).catch(function(error){
 					console.log(error);
 				});
+				getAuthor(this.user_id).then(res =>{
+					let response = res.data;
+					if( response.code == 200) {
+						this.author = response.extra[0]
+						console.log(response)
+					}
+				}).catch(function(error){
+					console.log(error);
+				});
+			},
+			icon:function(){
+				this.$router.push('/comment/'+data.id);
 			}
 		}
 	};
 </script>
+<style>
+	.goBack_pictoral{
+		display: inline-block;
+              /*float: left;*/
+              color: #bbb;
+
+			  margin: 10px 0 0 30px;
+              /*margin-top: -10px; */
+	}
+	.photo{
+		height: 300px;
+		/*margin-top: 30px;*/
+		/*background:#EDEDED;	*/
+	}
+	.words{
+		/*width: 500px;*/
+		height: 400px;
+		/*margin-top: 10px;*/
+		/*margin: auto;*/
+		/*background:#EDEDED;	*/
+	}
+	.icon{
+		margin: 10px;
+		/*background:#EDEDED;*/
+		color: #CFCFCF;
+		float: right;
+	}
+</style>
 

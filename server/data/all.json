@@ -1,0 +1,38 @@
+{
+    "article":{
+        "type":"历史文章",
+        "icon":"./static/images/logo.jpg",
+        "content":[
+            {"title":"浅谈新媒体的未来","author":"zuozhe", "img":"./static/images/xinmeiti.jpg","desc":"sc新媒体在未来居然是这样的！ 新媒体的火热由来已久，从今日dvd","content":"zheshineirong","time":"1"},
+            {"title":"2","author":"zuozhe", "img":"./static/images/xinmeiti.jpg","desc":"2222","content":"zheshineirong", "time":"1"},
+            {"title":"3","author":"zuozhe", "img":"./static/images/xinmeiti.jpg","desc":"333333","content":"zheshineirong", "time":"2"}
+        ]
+    },
+    "funny":{
+        "type":"轶事",
+        "icon":"./static/images/logo.jpg",
+        "content":[
+            {"title":"1","img":"","desc":"this is a jok"},
+            {"title":"2","img":"","desc":"th a jok"},
+            {"title":"3","img":"","desc":"this iok"}
+        ]
+    },
+    "question":{
+        "type":"问题",
+        "icon":"./static/images/logo.jpg",
+        "content":[
+            {"title":"1","img":"","desc":"this is a question"},
+            {"title":"2","img":"","desc":"thi question"},
+            {"title":"3","img":"","desc":"this ition"}
+        ]
+    },
+    "note":{
+        "type":"小记",
+        "icon":"./static/images/logo.jpg",
+        "content":[
+            {"title":"1","img":"./static/images/lfe01.jpg","desc":"this is a note"},
+            {"title":"1","img":"./static/images/lfe01.jpg","desc":"tha note"},
+            {"title":"1","img":"./static/images/lfe01.jpg","desc":"this iote"}
+        ]
+    }
+}

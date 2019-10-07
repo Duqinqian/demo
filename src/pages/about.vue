@@ -5,7 +5,7 @@
 			<h3>关于</h3>	
 		</div>
 		<div class="main">
-			<p>声明：无 ...啊</p>
+			<p>声明：无 ...</p>
 		</div>
 	</div>
 </template>

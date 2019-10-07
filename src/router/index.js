@@ -4,20 +4,35 @@ import Router from 'vue-router'
 import pageView from '@/pages/pageView'
 import Home from '@/pages/home'
 import Things from '@/pages/things'
-import Designer from '@/pages/designer'
 import Personal from '@/pages/personal'
+import superPersonal from '@/components/superpages/superPersonal'
+import superpublished from '@/components/superpages/superpublished'
+import superpublish from '@/components/superpages/superpublish'
 import Pictoral from '@/pages/pictoral'
-import Details from '@/pages/details'
+import pictoral_today from '@/pages/pictoral_today'
 import Comment from '@/pages/comment'
 import About from '@/pages/about'
 import login from '@/components/login/login'
+import superlogin from '@/components/login/superlogin'
+import register from '@/components/register/register'
+import myfocus from '@/pages/myfocus'
+import myfocusauthor from '@/pages/myfocusauthor'
+import mylost from '@/pages/mylost'
+import myfound from '@/pages/myfound'
+import mychat from '@/pages/mychat'
+import mymsg from '@/pages/mymsg'
+import all from '@/pages/all'
+import kown from '@/pages/kown'
+import allarticle from '@/pages/allarticle'
 
 import publish from '@/pages/publish'
-import notes from '@/pages/notes'
-import question from '@/pages/question'
-import fun from '@/pages/fun'
-
-import Prearticle from '@/pages/prearticle'
+import publish_lost from '@/pages/publish_lost'
+import publish_chat from '@/pages/publish_chat'
+import publish_all from '@/pages/publish_all'
+import chat from '@/pages/chat'
+import found from '@/pages/found'
+import lost from '@/pages/lost'
+import search from '@/pages/search'
 
 Router.prototype.goBack = function(){
 	this.isBack = true;
@@ -33,6 +48,31 @@ const routers = new Router({
       name:'login',
       component:login
     },
+     {
+      path:'/superlogin',
+      name:'superlogin',
+      component:superlogin
+    },
+      {
+      path:'/superPersonal',
+      name:'superPersonal',
+      component:superPersonal
+    },
+     {
+      path:'/superpublished',
+      name:'superpublished',
+      component:superpublished
+    },
+     {
+      path:'/superpublish',
+      name:'superpublish',
+      component:superpublish
+    },
+    {
+      path:'/register',
+      name:'register',
+      component:register
+    },
     {
       path:'',
       name:'',
@@ -43,47 +83,53 @@ const routers = new Router({
           name:'',
           component:Home,
           children:[
-           {
-            path:'',
+              {
+                path:'',
                 name:'pictoral',
                 meta:{index:1},
                 component:Pictoral
               },
+               {
+                path:'/pictoral_today/',
+                name:'pictoral_today',
+                meta:{index:1},
+                component:pictoral_today
+              },
               {
-                path:'/things',
+                path:'/all/',
+                name:'all',
+                meta:{index:1},
+                component:all
+              },
+              {
+                path:'/things/',
                 name:'things',
                 meta:{index:1},
                 component:Things
               },
               {
-                path:'/publish',
+                path:'/publish/',
                 name:'publish',
                 meta:{index:1},
                 component:publish
               },
-              {
-                path:'/notes',
-                name:'notes',
+               {
+                path:'/publish_lost/',
+                name:'publish_lost',
                 meta:{index:1},
-                component:notes
+                component:publish_lost
               },
                {
-                path:'/question',
-                name:'question',
+                path:'/publish_chat/',
+                name:'publish_chat',
                 meta:{index:1},
-                component:question
+                component:publish_chat
               },
               {
-                path:'/fun',
-                name:'fun',
+                path:'/publish_all/',
+                name:'publish_all',
                 meta:{index:1},
-                component:fun
-              },
-              {
-                path:'/designer',
-                name:'designer',
-                meta:{index:1},
-                component:Designer
+                component:publish_all
               },
               {
                 path:'/personal',
@@ -91,19 +137,80 @@ const routers = new Router({
                 meta:{index:1},
                 component:Personal
               },
+              
               {
-                path:'/prearticle',
-                name:'prearticle',
+                path:'/myfocus',
+                name:'myfocus',
                 meta:{index:1},
-                component:Prearticle
+                component:myfocus
+              },
+               {
+                path:'/myfocusauthor',
+                name:'myfocusauthor',
+                meta:{index:1},
+                component:myfocusauthor
+              },
+                {
+                path:'/allarticle/:item',
+                name:'allarticle',
+                meta:{index:1},
+                component:allarticle
+              },
+               {
+                path:'/mylost',
+                name:'mylost',
+                meta:{index:1},
+                component:mylost
+              },
+               {
+                path:'/myfound',
+                name:'myfound',
+                meta:{index:1},
+                component:myfound
+              },
+               {
+                path:'/mychat',
+                name:'mychat',
+                meta:{index:1},
+                component:mychat
+              },
+               {
+                path:'/mymsg',
+                name:'mymsg',
+                meta:{index:1},
+                component:mymsg
+              },
+              {
+                path:'/search',
+                name:'search',
+                meta:{index:1},
+                component:search
+              },
+               {
+                path:'/kown',
+                name:'kown',
+                meta:{index:1},
+                component:kown
+              },
+              {
+                path:'/lost',
+                name:'lost',
+                meta:{index:1},
+                component:lost
+              },
+              {
+                path:'/found',
+                name:'found',
+                meta:{index:1},
+                component:found
+              },
+              {
+                path:'/chat',
+                name:'chat',
+                meta:{index:1},
+                component:chat
               },
           ]
-        },
-        {
-          path:'/details/:id',
-          name:'details',
-          meta:{index:2},
-          component:Details
         },
         {
           path:'/comment/:id',

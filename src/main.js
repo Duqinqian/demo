@@ -12,9 +12,12 @@ import swiper from './components/swiper'
 import toast from './components/toast'
 import mynav from './components/swiper'
 import tabnav from './components/tabBar'
+// import ElementUI from 'element-ui'
+// import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.config.productionTip = false
 Vue.config.devtools = true
+// Vue.use(ElementUI)
 
 Vue.prototype.$axios = axios;
 

@@ -1,0 +1,20 @@
+{
+    "1":{
+        "img":"./static/images/lfe04.jpg",
+        "content":"fsdaaaaa",
+        "author":"author",
+        "date":"3.2"
+    },
+     "2":{
+        "img":"./static/images/lfe01.jpg",
+        "content":"bbbbbbbbb",
+        "author":"author",
+        "date":"2.3"
+    },
+     "3":{
+        "img":"./static/images/lfe03.jpg",
+        "content":"cccccccc",
+        "author":"author",
+        "date":"3.4"
+    }
+}

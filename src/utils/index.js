@@ -1,29 +1,33 @@
 export let prevent = function(e){
 	e.preventDefault();
 };
-
+// import {likeAriticle} from '../api/index'
 export let mixin = {
 	methods:{
 		like: function(item){
-			if(item.likeNum || item.likeNum === 0){
-				item.likeNum++;
-			}else{
-				this.likeNum++;
-			}
-			
+			// let params = {id: self.id}	
+				// console.log(params)
+				// likeAriticle(params).then( res => {
+				// 	let success = res.data
+				// 	if( success.code == 200) {
+				// 		item._like = +1;
+				// 		// console.log(item._like)
+				// 	}
+				// })
+			item._like = item._like + 1;
 			this.$toast("感谢你的喜欢 (^.^) ");
 		},
-		dislike: function(item){
-			if(item.dislikeNum || item.dislikeNum === 0){
-				item.dislikeNum--;
-			}else{
-				this.dislikeNum--;
-			}
-			this.$toast("我会努力的 : )");
-		},
-		showTotast: function(){
-			this.$toast({message:"敬请期待关注功能 :-)"});
-		},
+		// dislike: function(item){
+		// 	if(item._unlike || item._unlike === 0){
+		// 		item._unlike--;
+		// 	}else{
+		// 		this._unlike--;
+		// 	}
+		// 	this.$toast("我会努力的 : )");
+		// },
+		// showTotast: function(){
+		// 	this.$toast({message:"敬请期待关注功能 :-)"});
+		// },
 		goBack: function(){
 			this.$router.goBack();
 		}
@@ -80,7 +84,7 @@ export let pageAct = {
 				setTimeout(function(){
 					if(result.code == 200){
 						self.navList[self.activeIndex].dataList = result.list.concat(self.navList[self.activeIndex].dataList);
-						self.$toast("新增了两条数据.");
+						self.$toast("刷新成功.");
 					}
 					done();
 				},600);
